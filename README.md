@@ -22,47 +22,7 @@ Dashboard analytics отлично бьётся по любым поискови
 
 Это называется график синхронизации процессов.
 
-## import 
 
-"""обязательный блок на работу с данными и воспоизводства графиков cufflinks в оффлайн режиме
-   график будет работать оффлайн в автономном файле, но не будет отображаться в team`s
-   однако его можно будет скачать из team`s и посмотреть автономном на любой машине"""
-
-import pandas as pd
-import numpy as np
-import matplotlib
-import cufflinks as cf
-import plotly
-import plotly.offline as py
-import plotly.graph_objs as go
-
-"""cf.go_offline() нужно кастить внутрь ячейки"""
-
-py.init_notebook_mode() # graphs charts inline (IPython).
-
-"""дополнительный блок на решение прикладных задач"""
-
-from __future__ import division, print_function
-
-import warnings
-warnings.filterwarnings('ignore')
-
-import datetime
-import datetime as dt
-from collections import Counter
-
-"""Настройка глобальной темы cufflinks"""
-
-import cufflinks
-cufflinks.set_config_file(world_readable=True, theme='pearl', offline=True)
-
-"""Настройка работы интерактивного сеанса"""
-
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-init_notebook_mode(connected=True)
-pd.set_option('display.max_columns', 64)
-
-"""сначала mask, потом всё остальное - cufflinks едет только по чистым данным и не любит мои функции преобразования"""
 
 
 
